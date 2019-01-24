@@ -7,7 +7,8 @@
 
 ;;; 4.1 Matching an Arithmetic Expression Language
 
-(defn calc [input-file]
+(defn calc [[input-file]]
+  (dbg input-file)
   (let [is (if input-file
              (FileInputStream. input-file)
              System/in)

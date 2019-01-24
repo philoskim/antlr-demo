@@ -1,17 +1,18 @@
 (ns parser.core
   (:require [parser.expr.core :as expr]
             [parser.labeled-expr.core :as labeled]
-            [parser.java.core :as java]
-            ))
+            [parser.java.core :as java] ))
 
 (use 'debux.core)
 
-(defn -main [& [grammar input-file :as args]]
+(def usage* "Usage: lein run <grammar> <arg>*")
+
+(defn -main [& [grammar & rest-args :as args]]
   (if (zero? (count args))
-    (println "Usage: lein run <grammar> <input-file>")
+    (println usage*)
     (case grammar
-      "expr" (expr/calc input-file)
-      "labeled-expr" (labeled/calc input-file)
-      "java" (java/interface-extract-tool input-file)
-      )))
+      "expr" (expr/calc rest-args)
+      "labeled-expr" (labeled/calc rest-args)
+      "java" (java/interface-extract-tool rest-args)
+      (println (str usage* "\n" "<grammar> not matched")) )))
      

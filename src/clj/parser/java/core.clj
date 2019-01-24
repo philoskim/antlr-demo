@@ -10,7 +10,7 @@
 
 ;;; 4.3 Building a Translator with a Listener
 
-(defn interface-extract-tool [input-file]
+(defn interface-extract-tool [[input-file]]
   (let [is (if input-file
              (FileInputStream. input-file)
              System/in)

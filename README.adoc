@@ -24,13 +24,13 @@ $ alias grun='java org.antlr.v4.gui.TestRig'
 
 [listing]
 ----
-# in src/java/grammar/expr
+# in src/java/grammar/expr folder (4.1 Matching an Arithmetic Expression Language)
 $ antlr4 -package grammar.expr Expr.g4
 
-# in src/java/grammar/labeledexpr
+# in src/java/grammar/labeledexpr folder (4.2 Building a Calculator Using a Visitor)
 $ antlr4 -package grammar.labeledexpr -no-listener -visitor LabeledExpr.g4
 
-# in src/java/grammar/java
+# in src/java/grammar/java folder (4.3 Building a Translator with a Listener)
 $ antlr4 -package grammar.java Java.g4
 ----
 
@@ -39,16 +39,38 @@ $ antlr4 -package grammar.java Java.g4
 
 [listing]
 ----
-$ lein run <grammar> <input-file>?
+$ lein run <grammar> <arg>*
 ----
 
-* Usable <grammar> names
-** `expr` (4.1 Matching an Arithmetic Expression Language)
-** `labeled-expr` (4.2 Building a Calculator Using a Visitor)
-** `java` (4.3 Building a Translator with a Listener)
+=== Usable <grammar> names
 
+* `expr` (4.1 Matching an Arithmetic Expression Language)
++
 [listing]
-.<input-file> example
+----
+$ lein run expr data/t.expr
+----
+
+* `labeled-expr` (4.2 Building a Calculator Using a Visitor)
++
+[listing]
+----
+$ lein run labeled-expr data/t.expr
+----
+
+* `java` (4.3 Building a Translator with a Listener)
++
+[listing]
+----
+$ lein run java data/Demo.java
+----
+
+
+=== Examples
+
+* input file example
++
+[listing]
 ----
 $ lein run labeled-expr data/t.expr
 193
@@ -56,8 +78,9 @@ $ lein run labeled-expr data/t.expr
 9
 ----
 
+* STDIN example
++
 [listing]
-.STDIN example
 ----
 $ lein run labeled-expr
 (2+3)*4 <Enter>

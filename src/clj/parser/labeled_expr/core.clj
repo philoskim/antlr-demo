@@ -8,7 +8,7 @@
 
 ;;; 4.2 Building a Calculator Using a Visitor
 
-(defn calc [input-file]
+(defn calc [[input-file]]
   (let [is (if input-file
              (FileInputStream. input-file)
              System/in)
