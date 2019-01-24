@@ -2,7 +2,34 @@
 :sectnums:
 :source-language: clojure
 
-* Textbook: link:https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999/ref=sr_1_1?ie=UTF8&qid=1548314095&sr=8-1&keywords=antlr4[The Definitive ANTLR 4 Reference, Second Edition]
+* Textbook: link:https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999/ref=sr_1_1?ie=UTF8&qid=1548314095&sr=8-1&keywords=antlr4[The Definitive ANTLR 4 Reference, 2nd Edition, Pragmatic Bookshelf, 2013]
+
+
+== Setting up antlr4
+
+* https://www.antlr.org/
+
+[listing]
+----
+$ cd /usr/local/lib
+$ sudo curl -O https://www.antlr.org/download/antlr-4.7.2-complete.jar
+
+$ export CLASSPATH=".:/usr/local/lib/antlr-4.7.2-complete.jar:$CLASSPATH"
+$ alias antlr4='java -jar /usr/local/lib/antlr-4.7.2-complete.jar'
+$ alias grun='java org.antlr.v4.gui.TestRig'
+----
+
+
+== Generating lexers and parsers
+
+[listing]
+----
+# in src/java/grammar/expr
+$ antlr4 -package grammar.expr Expr.g4
+
+# in src/java/grammar/labeledexpr
+$ antlr4 -package grammar.labeledexpr -no-listener -visitor LabeledExpr.g4
+----
 
 
 == Running examples
@@ -12,7 +39,9 @@
 $ lein run <grammar> <input-file>
 ----
 
-* Usable <grammar> names: `expr`, `labeled-expr`
+* Usable <grammar> names
+** `expr` (4.1 Matching an Arithmetic Expression Language)
+** `labeled-expr` (4.2 Building a Calculator Using a Visitor)
 
 [listing]
 .example
