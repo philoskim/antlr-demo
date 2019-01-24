@@ -1,4 +1,4 @@
-(ns parser.expr
+(ns parser.expr.core
   (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream]
            [java.io FileInputStream InputStream]
            [grammar.expr ExprLexer ExprParser] ))

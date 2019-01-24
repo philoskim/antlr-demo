@@ -1,8 +1,8 @@
-(ns parser.labeled-expr
+(ns parser.labeled-expr.core
   (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream]
            [java.io FileInputStream InputStream]
            [grammar.labeledexpr LabeledExprLexer LabeledExprParser])
-  (:require [parser.eval-visitor :as eval]))
+  (:require [parser.labeled-expr.eval-visitor :as eval]))
 
 (use 'debux.core)
 

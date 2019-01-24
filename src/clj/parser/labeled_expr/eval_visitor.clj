@@ -1,4 +1,4 @@
-(ns parser.eval-visitor
+(ns parser.labeled-expr.eval-visitor
   (:import [grammar.labeledexpr LabeledExprParser LabeledExprBaseVisitor]))
 
 (use 'debux.core)

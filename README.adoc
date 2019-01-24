@@ -29,6 +29,9 @@ $ antlr4 -package grammar.expr Expr.g4
 
 # in src/java/grammar/labeledexpr
 $ antlr4 -package grammar.labeledexpr -no-listener -visitor LabeledExpr.g4
+
+# in src/java/grammar/java
+$ antlr4 -package grammar.java Java.g4
 ----
 
 
@@ -36,20 +39,30 @@ $ antlr4 -package grammar.labeledexpr -no-listener -visitor LabeledExpr.g4
 
 [listing]
 ----
-$ lein run <grammar> <input-file>
+$ lein run <grammar> <input-file>?
 ----
 
 * Usable <grammar> names
 ** `expr` (4.1 Matching an Arithmetic Expression Language)
 ** `labeled-expr` (4.2 Building a Calculator Using a Visitor)
+** `java` (4.3 Building a Translator with a Listener)
 
 [listing]
-.example
+.<input-file> example
 ----
-$ lein run labeled-expr t.expr
+$ lein run labeled-expr data/t.expr
 193
 17
 9
+----
+
+[listing]
+.STDIN example
+----
+$ lein run labeled-expr
+(2+3)*4 <Enter>
+<Ctrl-D or Ctrl-Z>
+20
 ----
 
 
