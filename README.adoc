@@ -1,0 +1,34 @@
+= Antlr4 demo for Clojure
+:sectnums:
+:source-language: clojure
+
+* Textbook: link:https://www.amazon.com/Definitive-ANTLR-4-Reference/dp/1934356999/ref=sr_1_1?ie=UTF8&qid=1548314095&sr=8-1&keywords=antlr4[The Definitive ANTLR 4 Reference, Second Edition]
+
+
+== Running examples
+
+[listing]
+----
+$ lein run <grammar> <input-file>
+----
+
+* Usable <grammar> names: `expr`, `labeled-expr`
+
+[listing]
+.example
+----
+$ lein run labeled-expr t.expr
+193
+17
+9
+----
+
+
+== License
+
+Distributed under the Eclipse Public License either version 1.0 or any later version.
+
+
+
+
+
