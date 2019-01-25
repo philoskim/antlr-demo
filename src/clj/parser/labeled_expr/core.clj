@@ -1,6 +1,6 @@
 (ns parser.labeled-expr.core
   (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream]
-           [java.io FileInputStream InputStream]
+           [java.io FileInputStream]
            [grammar.labeledexpr LabeledExprLexer LabeledExprParser])
   (:require [parser.labeled-expr.eval-visitor :as eval]))
 

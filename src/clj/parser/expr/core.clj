@@ -1,6 +1,6 @@
 (ns parser.expr.core
   (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream]
-           [java.io FileInputStream InputStream]
+           [java.io FileInputStream]
            [grammar.expr ExprLexer ExprParser] ))
 
 (use 'debux.core)

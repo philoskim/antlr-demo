@@ -1,8 +1,7 @@
 (ns parser.java.core
-  (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream
-                                 ParserRuleContext Token]
+  (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream Token]
            [org.antlr.v4.runtime.tree ParseTreeWalker]
-           [java.io FileInputStream InputStream]
+           [java.io FileInputStream]
            [grammar.java JavaLexer JavaParser])
   (:require [parser.java.extract-interface-listener :as extractor]))
 

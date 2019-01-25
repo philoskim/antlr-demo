@@ -1,8 +1,8 @@
 (ns parser.serial-id.core
   (:import [org.antlr.v4.runtime ANTLRInputStream CommonTokenStream
-                                 ParserRuleContext Token TokenStreamRewriter]
+                                 Token TokenStreamRewriter]
            [org.antlr.v4.runtime.tree ParseTreeWalker]
-           [java.io FileInputStream InputStream]
+           [java.io FileInputStream]
            [grammar.java JavaLexer JavaParser])
   (:require [parser.serial-id.insert-serial-id-listener :as inserter]))
 
