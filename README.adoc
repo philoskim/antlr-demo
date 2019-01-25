@@ -97,6 +97,22 @@ $ lein run java data/Demo.java
 ----
 
 
+* `rows` (4.4 Making Things Happen During the Parse)
++
+[listing]
+.Generating lexers and parsers
+----
+# in src/java/grammar/rows folder
+$ $ antlr4 -package grammar.rows -no-listener Rows.g4
+----
++
+[listing]
+.Running an example
+----
+$ lein run rows data/t.rows
+----
+
+
 
 
 == License
