@@ -49,7 +49,7 @@ $ lein run labeled-expr
 20
 ----
 
-=== Usable <grammar> names
+=== Detailed examples
 
 * `expr` (4.1 Matching an Arithmetic Expression Language)
 +
@@ -103,7 +103,7 @@ $ lein run java data/Demo.java
 .Generating lexers and parsers
 ----
 # in src/java/grammar/rows folder
-$ $ antlr4 -package grammar.rows -no-listener Rows.g4
+$ antlr4 -package grammar.rows -no-listener Rows.g4
 ----
 +
 [listing]
@@ -112,8 +112,20 @@ $ $ antlr4 -package grammar.rows -no-listener Rows.g4
 $ lein run rows data/t.rows
 ----
 
-
-
+* `serial-id` (4.5 Cool Lexical Features)
++
+[listing]
+.Generating lexers and parsers
+----
+# in src/java/grammar/java folder
+$ antlr4 -package grammar.java Java.g4
+----
++
+[listing]
+.Running an example
+----
+$ lein run serial-id data/Demo.java
+----
 
 == License
 
